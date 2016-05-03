@@ -15,3 +15,7 @@ PacYak can also be deployed inside VMs to leverage the PAC rules with CLI client
 Using PacYak you can set your proxies and auto configuration urls to http://127.0.0.1:8080 (by default) and forget about them.
 
 Please note that this has only been tested by me on one corporate network. It has worked well although I suspect there may be some occasional hiccups with https responses getting lost. YMMV.
+
+## Docker
+
+docker run -ti -v ./proxy.pac:/proxy.pac -p 8080:8080 pacyak /go/bin/pacyak -addr 0.0.0.0:8080 -icmphost http://proxy.proxy.edu:9090 /proxy.pac
