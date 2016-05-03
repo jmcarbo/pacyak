@@ -127,6 +127,7 @@ func (app *PacYakApplication) ServeHTTP(w http.ResponseWriter, r *http.Request) 
 	app.Logger.WithFields(log.Fields{
 		"method": r.Method,
 		"url":    r.URL.String(),
+		"remoteAddr": r.RemoteAddr,
 	}).Info("Processing HTTP request")
 
 	if r.URL.Path == "/pac" {
